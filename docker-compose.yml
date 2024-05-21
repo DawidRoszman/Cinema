@@ -1,0 +1,44 @@
+services:
+  cinema-api:
+    build:
+      context: ./CinemaAPI
+      args:
+        DB_URI_ARG: bolt://neo4j:7687
+        DB_USER_ARG: neo4j
+        DB_PASSWORD_ARG: secretpassword
+    image: cinema-api
+    ports:
+      - "8080:8080"
+    networks:
+      - internal
+      - external
+    restart: always
+    depends_on:
+      - neo4j
+  neo4j:
+    image: neo4j:5.19
+    volumes:
+      - $HOME/neo4j/cinema_api:/data
+    environment:
+      NEO4J_AUTH: neo4j/secretpassword
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    networks:
+      - internal
+    restart: always
+  cinema-frontend:
+    build: ./cinema-frontend
+    image: cinema-frontend
+    environment:
+      API: http://cinema-api:8080
+    ports:
+      - "3000:3000"
+    restart: always
+    depends_on:
+      - cinema-api
+    networks:
+      - external
+networks:
+  internal:
+  external:
