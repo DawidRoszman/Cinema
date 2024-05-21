@@ -1,16 +1,15 @@
 "use client";
 import React from "react";
-import Movie from "./Movie";
+import MovieAdmin from "./Movie";
 import GoBackBtn from "@/components/GoBackBtn";
 
 const Page = () => {
   return (
     <>
       <GoBackBtn />
-      <Movie />
+      <MovieAdmin />
     </>
   );
 };
 
 export default Page;
-

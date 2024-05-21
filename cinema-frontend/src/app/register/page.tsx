@@ -1,8 +1,6 @@
 "use client";
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import "tailwindcss/tailwind.css";
-import "daisyui/dist/full.css";
 import { agent } from "@/utils/httpsAgent";
 import axios from "axios";
 import { api } from "@/utils/apiAddress";

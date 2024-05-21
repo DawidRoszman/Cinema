@@ -1,16 +1,15 @@
 "use client";
 import React from "react";
-import Screening from "./Screening";
+import AdminScreening from "./Screening";
 import GoBackBtn from "@/components/GoBackBtn";
 
 const Page = () => {
   return (
     <>
       <GoBackBtn />
-      <Screening />
+      <AdminScreening />
     </>
   );
 };
 
 export default Page;
-

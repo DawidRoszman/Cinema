@@ -4,9 +4,8 @@ import MovieDetails from "./MovieDetails";
 import { MovieProvider } from "./MovieContext";
 import { useState } from "react";
 import { Movie } from "./movieReducer";
-import { useToken } from "@/app/components/TokenContext";
 
-const Movie = () => {
+const MovieAdmin = () => {
   const [selectedMovie, setSelectedMovie] = useState<Movie | null>(null);
   return (
     <MovieProvider>
@@ -30,4 +29,4 @@ const Movie = () => {
   );
 };
 
-export default Movie;
+export default MovieAdmin;

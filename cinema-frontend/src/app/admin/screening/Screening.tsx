@@ -5,7 +5,7 @@ import { ScreeningProvider } from "./ScreeningContext";
 import { useState } from "react";
 import { Screening } from "@/types/types";
 
-const Screening = () => {
+const AdminScreening = () => {
   const [selectedScreening, setSelectedScreening] = useState<Screening | null>(
     null,
   );
@@ -21,18 +21,14 @@ const Screening = () => {
               Back to list
             </button>
           )}
-          <ScreeningDetails
-            selectedScreening={selectedScreening}
-          />
+          <ScreeningDetails selectedScreening={selectedScreening} />
         </div>
         {selectedScreening === null && (
-          <ScreeningList
-            setSelectedScreening={setSelectedScreening}
-          />
+          <ScreeningList setSelectedScreening={setSelectedScreening} />
         )}
       </div>
     </ScreeningProvider>
   );
 };
 
-export default Screening;
+export default AdminScreening;
