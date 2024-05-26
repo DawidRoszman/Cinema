@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("api/v1/admin")
+@RequestMapping("admin")
 public class AdminController {
 
     private final MovieService movieService;

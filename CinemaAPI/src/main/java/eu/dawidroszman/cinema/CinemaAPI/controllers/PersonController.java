@@ -12,7 +12,7 @@ import java.security.Principal;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/v1/persons")
+@RequestMapping("persons")
 public class PersonController {
 
     private final PersonService personService;

@@ -1,0 +1,11 @@
+services:
+  neo4j:
+    image: neo4j:5.19
+    volumes:
+      - $HOME/neo4j/cinema_api:/data
+    environment:
+      NEO4J_AUTH: neo4j/secretpassword
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+    restart: always
